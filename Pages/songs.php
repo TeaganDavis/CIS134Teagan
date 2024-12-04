@@ -7,11 +7,28 @@
 </head>
 <body>
     <nav>
-        <a href="../index.php">Home</a>
-        <a href="songs.php">Songs</a>
-        <a href="#">Your Collection</a>
+        <?php $navButtons = [
+            [
+                "navCaption" => "Home",
+                "navLink" => "../index.php"
+            ],
+            [
+                "navCaption" => "Songs",
+                "navLink" => "Pages/Songs.php"
+            ],
+            [
+                "navCaption" => "Your Collection",
+                "navLink" => "#"
+            ],
+            [
+                "navCaption" => "Profile",
+                "navLink" => "#"
+            ]
+        ] ?>
+        <?php foreach ($navButtons as $navItem): ?>
+            <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
+        <?php endforeach; ?>
         <p id="date"> Today is <a><?php echo date("D, F, j") ; ?> </a> </p>
-        <a href="#">Profile</a>
     </nav>
     <div id="content">
         <div class="header">
@@ -33,35 +50,40 @@
                         "artist" => "Linkin Park",
                         "album" => "From Zero",
                         "genre" => ["Rock"],
-                        "length" => "2:47"
+                        "length" => "2:47",
+                        "rating" => 9.9
                     ],
                     [
                         "songName" => "Basket Case",
                         "artist" => "Green Day",
                         "album" => "Dookie",
                         "genre" => ["Punk Rock", "Alternative Rock"],
-                        "length" => "3:02"
+                        "length" => "3:02",
+                        "rating" => 8.6
                     ],
                     [
                         "songName" => "Emptiness Machine",
                         "artist" => "Linkin Park",
                         "album" => "From Zero",
                         "genre" => ["Rock"],
-                        "length" => "3:10"
+                        "length" => "3:10",
+                        "rating" => 9.5
                     ],
                     [
                         "songName" => "Shame Shame",
                         "artist" => "Foo Fighters",
                         "album" => "Medicine At Midnight",
                         "genre" => ["Classic Rock"],
-                        "length" => "4:17"
+                        "length" => "4:17",
+                        "rating" => 8.7
                     ],
                     [
                         "songName" => "My Band",
                         "artist" => "D12",
                         "album" => "D12 World",
                         "genre" => ["Pop Rap", "Hip Hop"],
-                        "length" => "4:58"
+                        "length" => "4:58",
+                        "rating" => 8.1
                     ]
                 ]
             ?>
@@ -72,14 +94,16 @@
                     <th>Album</th>
                     <th>Length</th>
                     <th>Genre(s)</th>
+                    <th>Your Rating</th>
                 </tr>
                 <?php foreach ($songList as $song): ?>
                     <tr class="song-row">
-                        <td><?php echo $song['songName']; ?></td>
-                        <td><?php echo $song['artist']; ?></td>
-                        <td><?php echo $song['album']; ?></td>
-                        <td><?php echo $song['length']; ?></td>
-                        <td><?php echo implode(", ", $song['genre']); ?></td>
+                        <td><p><?php echo $song['songName']; ?></p></td>
+                        <td><a href="#"><p><?php echo $song['artist']; ?></p></a></td>
+                        <td><p><?php echo $song['album']; ?></p></td>
+                        <td><p><?php echo $song['length']; ?></p></td>
+                        <td><p><?php echo implode(", ", $song['genre']); ?></p></td>
+                        <td><p><?php echo $song['rating']?></p></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

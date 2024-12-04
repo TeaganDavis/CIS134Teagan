@@ -11,11 +11,28 @@ content="text/html; charset=iso-8859-1" />
 </head>
 <body>
     <nav>
-        <a href="./index.php">Home</a>
-        <a href="Pages/songs.php" target="_self">Songs</a>
-        <a href="#">Your Collection</a>
+        <?php $navButtons = [
+            [
+                "navCaption" => "Home",
+                "navLink" => "index.php"
+            ],
+            [
+                "navCaption" => "Songs",
+                "navLink" => "Pages/Songs.php"
+            ],
+            [
+                "navCaption" => "Your Collection",
+                "navLink" => "#"
+            ],
+            [
+                "navCaption" => "Profile",
+                "navLink" => "#"
+            ]
+        ] ?>
+        <?php foreach ($navButtons as $navItem): ?>
+            <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
+        <?php endforeach; ?>
         <p id="date"> Today is <a><?php echo date("D, F, j") ; ?> </a> </p>
-        <a href="#">Profile</a>
     </nav>
     <div id="content">
         <div class="header">
