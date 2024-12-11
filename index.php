@@ -1,13 +1,18 @@
 <html>
 <head>
     <!-- Created 11/26/2024 by Teagan -->
-    <!-- Unit 2 worked on: 12/3/2024 -->
+    <!-- Unit 3 worked on: 12/10/2024 -->
     <!-- This page is a mock business/music page -->
     <!-- Melos is the shortened Greek version of 'melody' -->
     <title>Melos</title>
     <meta http-equiv="Content-Type"
 content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="Css/MainStyles.css">
+
+    <!-- This will be my global php zone -->
+    <?php
+        date_default_timezone_set("America/Chicago");
+    ?>
 </head>
 <body>
     <nav>
@@ -35,17 +40,7 @@ content="text/html; charset=iso-8859-1" />
         <p id="date"> Today is <a><?php echo date("D, F, j") ; ?> </a> </p>
     </nav>
     <div id="content">
-        <div class="header">
-            <h1>Welcome to <a>Melos</a></h1>
-            <h3>The best collection of melodies</h3>
-        </div>
-
-        <!-- I want to only show the login in the future
-        based off of cache data -->
-        <div id="login">
-            <h4>Be sure to <a href="#">login</a>,</h4>
-            <h4>or create an account <a href="#">here</a>!</h4>
-        </div>
+        <?php require "./Components/welcome.php" ?>
 
         <!-- Same with the login, show this once logged in and
         somehow sort it based of recently used but make it a loop-->
