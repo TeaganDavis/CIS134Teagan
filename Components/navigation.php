@@ -4,11 +4,11 @@
             $navButtons = [
                 [
                     "navCaption" => "Home",
-                    "navLink" => "index.php"
+                    "navLink" => "./index.php"
                 ],
                 [
                     "navCaption" => "Songs",
-                    "navLink" => "Pages/Songs.php"
+                    "navLink" => "./songs.php"
                 ],
                 [
                     "navCaption" => "Your Collection",

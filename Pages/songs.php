@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../Css/SongsPage.css">
 </head>
 <body>
-    <?php require "./Components/navigation.php" ?>
+    <?php require "../Components/navigation.php" ?>
     <div id="content">
         <div class="header">
             <h2>Our Song Collection</h2>
@@ -86,5 +86,7 @@
             </table>
         </div>
     </div>
+
+    <?php require "../Components/footer.php" ?>
 </body>
 </html>

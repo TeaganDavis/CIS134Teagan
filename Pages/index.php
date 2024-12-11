@@ -7,20 +7,19 @@
     <title>Melos</title>
     <meta http-equiv="Content-Type"
 content="text/html; charset=iso-8859-1" />
-    <link rel="stylesheet" href="Css/MainStyles.css">
+    <link rel="stylesheet" href="../Css/MainStyles.css">
 
     <!-- This will be my global php zone -->
     <?php
         date_default_timezone_set("America/Chicago");
     ?>
 </head>
-<body>
-    <?php require "./Components/navigation.php" ?>
-    <div id="content">
-        <?php require "./Components/welcome.php" ?>
 
-        <!-- Same with the login, show this once logged in and
-        somehow sort it based of recently used but make it a loop-->
+<body>
+    <?php require "../Components/navigation.php" ?>
+    <div id="content">
+        <?php include "../Components/welcome.php" ?>
+
         <h2>Your Recently Played</h2>
         <div id="recent-playlists">
             <div class="playlists" id="playlist-id1">
@@ -68,6 +67,7 @@ content="text/html; charset=iso-8859-1" />
             </div>
         </div>
     </div>
-    
+
+    <?php require "../Components/footer.php" ?>
 </body>
 </html>
