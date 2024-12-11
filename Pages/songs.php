@@ -6,30 +6,7 @@
     <link rel="stylesheet" href="../Css/SongsPage.css">
 </head>
 <body>
-    <nav>
-        <?php $navButtons = [
-            [
-                "navCaption" => "Home",
-                "navLink" => "../index.php"
-            ],
-            [
-                "navCaption" => "Songs",
-                "navLink" => "Pages/Songs.php"
-            ],
-            [
-                "navCaption" => "Your Collection",
-                "navLink" => "#"
-            ],
-            [
-                "navCaption" => "Profile",
-                "navLink" => "#"
-            ]
-        ] ?>
-        <?php foreach ($navButtons as $navItem): ?>
-            <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
-        <?php endforeach; ?>
-        <p id="date"> Today is <a><?php echo date("D, F, j") ; ?> </a> </p>
-    </nav>
+    <?php require "./Components/navigation.php" ?>
     <div id="content">
         <div class="header">
             <h2>Our Song Collection</h2>

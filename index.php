@@ -15,30 +15,7 @@ content="text/html; charset=iso-8859-1" />
     ?>
 </head>
 <body>
-    <nav>
-        <?php $navButtons = [
-            [
-                "navCaption" => "Home",
-                "navLink" => "index.php"
-            ],
-            [
-                "navCaption" => "Songs",
-                "navLink" => "Pages/Songs.php"
-            ],
-            [
-                "navCaption" => "Your Collection",
-                "navLink" => "#"
-            ],
-            [
-                "navCaption" => "Profile",
-                "navLink" => "#"
-            ]
-        ] ?>
-        <?php foreach ($navButtons as $navItem): ?>
-            <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
-        <?php endforeach; ?>
-        <p id="date"> Today is <a><?php echo date("D, F, j") ; ?> </a> </p>
-    </nav>
+    <?php require "./Components/navigation.php" ?>
     <div id="content">
         <?php require "./Components/welcome.php" ?>
 
