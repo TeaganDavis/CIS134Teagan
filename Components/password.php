@@ -5,7 +5,7 @@
                 "ayUf!R6nG12l",
                 "h99urj",
                 "dogname09",
-                "j_wi3o0q!kan",
+                "j_Wi3o0q!Kan",
                 "HIAL372IE__Ems",
                 "SuperKid13_",
                 "Ii75xrT&SO6af",
@@ -19,41 +19,41 @@
                 if (preg_match( "/.{12,}/", $password)){
                     $validCounter += 1;
                 } else {
-                    echo $password . " is too short.";
+                    echo $password . " is too short.<br>";
                 }
 
                 if (preg_match( "/(?=.*[a-z])/", $password)){
                     $validCounter += 1;
                 } else {
-                    echo $password . " doesn't have a lowercase letter.";
+                    echo $password . " doesn't have a lowercase letter.<br>";
                 }
 
                 if (preg_match( "/(?=.*[A-Z])/", $password)){
                     $validCounter += 1;
                 } else {
-                    echo $password . " doesn't have a uppercase letter.";
+                    echo $password . " doesn't have an uppercase letter.<br>";
                 }
 
                 if (preg_match( "/(?=.*\d)/", $password)){
                     $validCounter += 1;
                 } else {
-                    echo $password . " doesn't have a number.";
+                    echo $password . " doesn't have a number.<br>";
                 }
 
                 if (preg_match( "/(?=.*[\W_])/", $password)){
                     $validCounter += 1;
                 } else {
-                    echo $password . " doesn't have a special character.";
+                    echo $password . " doesn't have a special character.<br>";
                 }
 
                 if (preg_match("/\s/", $password)) {
-                    echo $password . " contains a space, no spaces in passwords.";
+                    echo $password . " contains a space, no spaces in passwords.<br>";
                 } else {
                     $validCounter += 1;
                 }
 
                 if ($validCounter == 6){
-                    echo true;
+                    echo $password . " is valid! <br>";
                 }
             }
 
@@ -66,29 +66,37 @@
                         if (preg_match( "/(?=.*\d)/", $password)){
                             if (preg_match( "/(?=.*[\W_])/", $password)){
                                 if (preg_match("/\s/", $password)) {
-                                    echo $password . " contains a space, no spaces in passwords.";
+                                    echo $password . " contains a space, no spaces in passwords. <br>";
                                 } else {
-                                    echo true;
+                                    echo $password . " is valid! <br>"
                                 }
                             } else {
-                                echo $password . " doesn't have a special character.";
+                                echo $password . " doesn't have a special character. <br>";
                             }
                         } else {
-                            echo $password . " doesn't have a number.";
+                            echo $password . " doesn't have a number. <br>";
                         }
                     } else {
-                        echo $password . " doesn't have a uppercase letter.";
+                        echo $password . " doesn't have an uppercase letter. <br>";
                     }
                   } else {
-                      echo $password . " doesn't have a lowercase letter.";
+                      echo $password . " doesn't have a lowercase letter. <br>";
                   }
               } else {
-                  echo $password . " is too short.";
+                  echo $password . " is too short. <br>";
               }
              * */
         ?>
     </head>
     <body>
-        
+        <div>
+            <?php
+                foreach ($passwords as $password){
+                    echo "Currently testing password: " . $password . "<br>";
+                    checkPassword( $password );
+                    echo "<br>";
+                }
+            ?>
+        </div>
     </body>
 </html>
