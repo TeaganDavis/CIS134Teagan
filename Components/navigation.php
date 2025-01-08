@@ -12,7 +12,7 @@
                 ],
                 [
                     "navCaption" => "Your Collection",
-                    "navLink" => "#"
+                    "navLink" => "./usercollection.php"
                 ],
                 [
                     "navCaption" => "Profile",

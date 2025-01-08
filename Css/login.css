@@ -17,6 +17,7 @@ label {
 }
 #content input {
     background-color: rgba(130, 130, 130, 0.35);
+    color: #FFFFFF;
     border-radius: 10px;
     height: 35px;
 }
