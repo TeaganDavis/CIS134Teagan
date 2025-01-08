@@ -24,7 +24,7 @@
     <body>
         <nav>
             <?php foreach ($navButtons as $navItem): ?>
-            <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
+                <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
             <?php endforeach; ?>
             <p id='date'> Today is <a><?php echo date('D, F, j') ; ?> </a> </p>
         </nav>

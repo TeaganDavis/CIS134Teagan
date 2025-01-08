@@ -91,11 +91,11 @@
     <body>
         <div>
             <?php
-                foreach ($passwords as $password){
-                    echo "Currently testing password: " . $password . "<br>";
-                    checkPassword( $password );
-                    echo "<br>";
-                }
+//                foreach ($passwords as $password){
+//                    echo "Currently testing password: " . $password . "<br>";
+//                    checkPassword( $password );
+//                    echo "<br>";
+//                }
             ?>
         </div>
     </body>

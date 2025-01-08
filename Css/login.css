@@ -1,0 +1,35 @@
+#content {
+    padding-top: 15%;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 25%;
+}
+label {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+#content a:hover, button:hover {
+    cursor: pointer;
+}
+#content input {
+    background-color: rgba(130, 130, 130, 0.35);
+    border-radius: 10px;
+    height: 35px;
+}
+#content button {
+    margin-top: 30px;
+    padding: 10px;
+    transition: 0.3s;
+    background-color: rgba(130, 130, 130, 0.35);
+    font-size: 18px;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+#content button:hover {
+    transition: 0.3s;
+    background-color: rgba(130, 130, 130, 0.50);
+}
