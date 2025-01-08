@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     height: 100%;
     padding-bottom: 70px;
+    margin-bottom: 10%;
 }
 nav {
     top: 0;

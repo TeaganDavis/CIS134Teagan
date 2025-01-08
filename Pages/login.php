@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../Css/MainStyles.css">
     <link rel="stylesheet" href="../Css/login.css">
+
 </head>
 <body>
     <?php require "../Components/navigation.php" ?>
@@ -18,11 +19,16 @@
 
                 <label for="password">Password: </label>
                 <input type="text" id="password" name="password" value="" required>
+                    <!-- Really wanted to combine the 2 units here, but doesn't seem to work -->
+<!--                --><?php //require "../Components/password.php"?>
+<!--                --><?php //if (isset($errors["password_errors"])): ?>
+<!--                    <span class="error">--><?php //= $errors["password_errors"] ?><!--</span>-->
+<!--                --><?php //endif; ?>
 
                 <button type="submit" name="submit_login">Login!</button>
             </form>
             <p>Don't have an account? <a href="#">Create one</a>!</p>
-            <?php require "../Components/password.php"?>
+
         </div>
     <?php require "../Components/footer.php" ?>
 </body>

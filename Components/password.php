@@ -12,6 +12,7 @@
                 "SGDn7!!20Ijan",
                 "EasyMoney"
             ];
+            $errors = [];
 
             function checkPassword( $password){
                 $validCounter = 0;
@@ -53,44 +54,25 @@
                 }
 
                 if ($validCounter == 6){
-                    echo $password . " is valid! <br>";
+                    echo $password . " is valid.<br>";
                 }
             }
-
-            /* This is the same thing, but looks utterly atrocious
-            and I don't think I should implement it...
-             *
-             * if (preg_match( "/.{12,}/", $password)){
-                  if (preg_match( "/(?=.*[a-z])/", $password)){
-                    if (preg_match( "/(?=.*[A-Z])/", $password)){
-                        if (preg_match( "/(?=.*\d)/", $password)){
-                            if (preg_match( "/(?=.*[\W_])/", $password)){
-                                if (preg_match("/\s/", $password)) {
-                                    echo $password . " contains a space, no spaces in passwords. <br>";
-                                } else {
-                                    echo $password . " is valid! <br>"
-                                }
-                            } else {
-                                echo $password . " doesn't have a special character. <br>";
-                            }
-                        } else {
-                            echo $password . " doesn't have a number. <br>";
-                        }
-                    } else {
-                        echo $password . " doesn't have an uppercase letter. <br>";
-                    }
-                  } else {
-                      echo $password . " doesn't have a lowercase letter. <br>";
-                  }
-              } else {
-                  echo $password . " is too short. <br>";
-              }
-             * */
         ?>
     </head>
     <body>
         <div>
             <?php
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                if (isset($_POST['form_id'])) {
+                    $form_id = $_POST['form_id'];
+
+                    if ($form_id == 'login_form') {
+                        $user_password = htmlspecialchars($_POST['password']);
+                        checkPassword($user_password);
+                    }
+                }
+            }
+
 //                foreach ($passwords as $password){
 //                    echo "Currently testing password: " . $password . "<br>";
 //                    checkPassword( $password );
