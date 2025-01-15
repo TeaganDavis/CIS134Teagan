@@ -1,7 +1,7 @@
 <html>
 <head>
     <!-- Created 11/26/2024 by Teagan -->
-    <!-- Unit 5 worked on: 1/7/2025 -->
+    <!-- Unit 6 worked on: 1/14/2025 -->
     <!-- This page is a mock business/music page -->
     <!-- Melos is the shortened Greek version of 'melody' -->
     <title>Melos</title>
@@ -9,9 +9,8 @@
 content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="../Css/MainStyles.css">
 
-    <!-- This will be my global php zone -->
     <?php
-        date_default_timezone_set("America/Chicago");
+        require_once "../init.php";
     ?>
 </head>
 

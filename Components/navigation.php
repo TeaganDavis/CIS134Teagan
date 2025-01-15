@@ -1,6 +1,9 @@
 <html>
     <head>
         <?php
+            date_default_timezone_set("America/Chicago");
+            include "../init.php";
+
             $navButtons = [
                 [
                     "navCaption" => "Home",
