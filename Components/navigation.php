@@ -19,13 +19,18 @@
                 ],
                 [
                     "navCaption" => "Profile",
-                    "navLink" => "#"
+                    "navLink" => "./userprofile.php"
                 ]
             ]
         ?>
     </head>
     <body>
         <nav>
+            <?php
+                if ($_SESSION["isLoggedIn"]) {
+                    echo "<h4>" . $_SESSION['username'] . "</h4>";
+                }
+            ?>
             <?php foreach ($navButtons as $navItem): ?>
                 <a href=<?php echo $navItem['navLink']?>><?php echo $navItem['navCaption'] ?></a>
             <?php endforeach; ?>

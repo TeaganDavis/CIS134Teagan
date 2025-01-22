@@ -1,17 +1,6 @@
 <html>
     <head>
         <?php
-            $passwords = [
-                "ayUf!R6nG12l",
-                "h99urj",
-                "dogname09",
-                "j_Wi3o0q!Kan",
-                "HIAL372IE__Ems",
-                "SuperKid13_",
-                "Ii75xrT&SO6af",
-                "SGDn7!!20Ijan",
-                "EasyMoney"
-            ];
             $errors = [];
 
             function checkPassword( $password){

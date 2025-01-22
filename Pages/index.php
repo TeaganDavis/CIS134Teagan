@@ -10,14 +10,16 @@ content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="../Css/MainStyles.css">
 
     <?php
-        require_once "../init.php";
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_start();
+        }
     ?>
 </head>
 
 <body>
     <?php require "../Components/navigation.php" ?>
     <div id="content">
-        <?php include "../Components/welcome.php" ?>
+        <?php include "../Components/welcome.php"; ?>
 
         <h2>Your Recently Played</h2>
         <div id="recent-playlists">

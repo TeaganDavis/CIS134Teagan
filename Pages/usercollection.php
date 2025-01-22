@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="../Css/login.css">
 
     <?php
+
+    require_once "../init.php";
+
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
+        header("Location: login.php");
+        exit;
+    }
+
         $available_genres = [
             "Rock",
             "Pop",
@@ -27,7 +39,7 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // trimming whitespace at the beginning or end of the name
-            $name = trim(isset($_POST["playlist_name"]) ? $_POST["playlist_name"] : "");
+            $name = trim($_POST["playlist_name"] ?? "");
             if (empty($name)) {
                 $errors["name"] = "Playlist name is required.";
             }
@@ -37,7 +49,7 @@
             }
 
             // again, trims
-            $description = trim(isset($_POST["playlist_desc"]) ? $_POST["playlist_desc"] : "");
+            $description = trim($_POST["playlist_desc"] ?? "");
 
             if (!empty($_POST['genre'] && is_array($_POST['genre']))) {
                 $genres = $_POST['genre'];
@@ -45,11 +57,11 @@
                 $errors["genres"] = "Please select at least one genre.";
             }
 
-            $mood = trim(isset($_POST["playlist_mood"]) ? $_POST["playlist_mood"] : "");
+            $mood = trim($_POST["playlist_mood"] ?? "");
 
             // this won't really be used since I have the 'private' preselected
             // but just in case and so the variable gets instantiated
-            $privacy = isset($_POST["playlist_privacy"]) ? $_POST["playlist_privacy"] : "";
+            $privacy = $_POST["playlist_privacy"] ?? "";
             if (!in_array($privacy, ["Public", "Friends only", "Private"])) {
                 $errors["privacy"] = "Please select a valid privacy option.";
             }

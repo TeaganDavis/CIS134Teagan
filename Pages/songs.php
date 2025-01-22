@@ -4,6 +4,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link rel="stylesheet" href="../Css/MainStyles.css">
     <link rel="stylesheet" href="../Css/SongsPage.css">
+
+    <?php
+
+    require_once "../init.php";
+
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+
+    if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn']) {
+        header("Location: login.php");
+        exit;
+    }
+    ?>
 </head>
 <body>
     <?php require "../Components/navigation.php" ?>

@@ -17,8 +17,8 @@
                 $form_id = $_POST['form_id'];
 
                 if ($form_id == 'login_form') {
-                    $username = htmlspecialchars($_POST['username']);
-                    $password = htmlspecialchars($_POST['password']);
+                    $username = trim($_POST['loginusername']);
+                    $password = trim($_POST['loginpassword']);
                     searchPasswordFile($username, $password);
                 } /* elseif ($form_id == 'register_form') {
                     $email = htmlspecialchars($_POST['email']);
@@ -44,10 +44,23 @@
                     $fileUsername = trim(fgets($userlogins)); // Read username
                     $filePassword = trim(fgets($userlogins)); // Read password
 
+                    // Check for admin login
+                    if ($username === "nagaeT" && $password === "Ii75xrT&SO6af") {
+                        $_SESSION['isLoggedIn'] = true;
+                        $_SESSION['username'] = $username;
+                        fclose($userlogins);
+                        header("Location: index.php");
+                        exit;
+                    }
+
                     // Check if both the username and the password match
                     if ($username === $fileUsername && $password === $filePassword) {
-                        Globals::$isLoggedIn = true;
-                        echo "<p>Login Success! Welcome, $username.</p>";
+                        $_SESSION['isLoggedIn'] = true;
+                        echo "<p>Debug: Username set in session is " . htmlspecialchars($_SESSION['username']) . "</p>";
+                        $_SESSION['username'] = $username;
+                        echo "<p>Debug: Username set in session is " . htmlspecialchars($_SESSION['username']) . "</p>";
+                        echo "<p>Login Success! Welcome, " . htmlspecialchars($_SESSION['username']) . ".</p>";
+                        echo "<p><a href='./index.php'>Go back</a></p>";
                         fclose($userlogins);
                         return;
                     }
@@ -55,7 +68,7 @@
                 fclose($userlogins);
             }
 
-            // If no match found
+            // If there's no match found
             echo "<p>Invalid username or password. Please try again.</p>";
         }
 

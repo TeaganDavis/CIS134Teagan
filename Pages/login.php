@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../Css/MainStyles.css">
     <link rel="stylesheet" href="../Css/login.css">
 
+
 </head>
 <body>
     <?php require "../Components/navigation.php" ?>
@@ -15,10 +16,10 @@
                 <input type="hidden"  name="form_id" value="login_form">
 
                 <label for="username">Username: </label>
-                <input type="text" id="username" name="username" value="" required>
+                <input type="text" id="username" name="loginusername" value="" required>
 
                 <label for="password">Password: </label>
-                <input type="text" id="password" name="password" value="" required>
+                <input type="text" id="password" name="loginpassword" value="" required>
 
                 <button type="submit" name="submit_login">Login!</button>
             </form>
