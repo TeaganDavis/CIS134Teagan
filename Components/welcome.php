@@ -24,7 +24,7 @@
             } else {
                 echo "
                     <div class='header'>
-                        <h1>Welcome to <a>Melos</a>," . $_SESSION['username'] . "</h1>
+                        <h1>Welcome to <a>Melos</a>, " . $_SESSION['username'] . "</h1>
                         <h3>The best collection of melodies</h3>
                     </div>";
             }

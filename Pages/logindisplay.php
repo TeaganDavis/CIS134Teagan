@@ -51,18 +51,12 @@
                         fclose($userlogins);
                         header("Location: index.php");
                         exit;
-                    }
-
-                    // Check if both the username and the password match
-                    if ($username === $fileUsername && $password === $filePassword) {
+                    } elseif ($username === $fileUsername && $password === $filePassword) {
                         $_SESSION['isLoggedIn'] = true;
-                        echo "<p>Debug: Username set in session is " . htmlspecialchars($_SESSION['username']) . "</p>";
                         $_SESSION['username'] = $username;
-                        echo "<p>Debug: Username set in session is " . htmlspecialchars($_SESSION['username']) . "</p>";
-                        echo "<p>Login Success! Welcome, " . htmlspecialchars($_SESSION['username']) . ".</p>";
-                        echo "<p><a href='./index.php'>Go back</a></p>";
                         fclose($userlogins);
-                        return;
+                        header("Location: index.php");
+                        exit;
                     }
                 }
                 fclose($userlogins);

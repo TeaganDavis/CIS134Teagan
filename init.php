@@ -7,7 +7,7 @@
         $_SESSION['isLoggedIn'] = false;
     }
 
-    if(isset($_SESSION['username'])){
+    if(!isset($_SESSION['username'])){
         $_SESSION['username'] = "";
     }
 
