@@ -20,15 +20,9 @@
                     $username = trim($_POST['loginusername']);
                     $password = trim($_POST['loginpassword']);
                     searchPasswordFile($username, $password);
-                } /* elseif ($form_id == 'register_form') {
-                    $email = htmlspecialchars($_POST['email']);
-                    $username = htmlspecialchars($_POST['username']);
-                    $password = htmlspecialchars($_POST['password']);
-
-                    echo "<p>Register Success!</p>";
                 } else {
                     echo "<p>Unknown form received.</p>";
-                } */
+                }
             } else {
                 echo "<p>Error: Form ID is wrong.</p>";
             }
@@ -43,6 +37,7 @@
                 while (!feof($userlogins)) {
                     $fileUsername = trim(fgets($userlogins)); // Read username
                     $filePassword = trim(fgets($userlogins)); // Read password
+                    $fileEmail = trim(fgets($userlogins)); // Read email (not used here)
 
                     // Check for admin login
                     if ($username === "nagaeT" && $password === "Ii75xrT&SO6af") {

@@ -23,7 +23,7 @@
 
                 <button type="submit" name="submit_login">Login!</button>
             </form>
-            <p>Don't have an account? <a href="#">Create one</a>!</p>
+            <p>Don't have an account? <a href="./register.php">Create one</a>!</p>
 
         </div>
     <?php require "../Components/footer.php" ?>

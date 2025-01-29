@@ -19,7 +19,7 @@
                     
                     <div id='login'>
                         <h4>Be sure to <a href='../Pages/login.php'>login</a></h4>
-                        <h4>or <a href='#'>create</a> an account!</h4>
+                        <h4>or <a href='../Pages/register.php'>create</a> an account!</h4>
                     </div>";
             } else {
                 echo "
